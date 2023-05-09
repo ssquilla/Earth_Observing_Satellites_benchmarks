@@ -1,5 +1,13 @@
 These benchmarks are made of generated files for Earth Observing Satellites Problems (EOSP).
-Each benchmark names follows the pattern OS-V-S-P-jan_2x8_POI_XXXX, where:
+Two benchmarks are available : concentrated_instances (50 Points of interests) vs spread instances (no points of interests).
+
+Each of these benchmarks contains several instances of different sizes, referred to as:
+* 	small (around 50 requests)
+* 	medium (around 250 requests)
+* 	big (around 500 requests)
+* 	large (around 1000 requests)
+
+Each instance name follows the pattern OS-V-S-P-jan_2x8_POI_XXXX, where:
     "OS" indicates the number of ONE-SHOT requests
     "V" indicates the number of VIDEO requests
     "S" indicates the number of STEREO requests
@@ -8,19 +16,14 @@ Each benchmark names follows the pattern OS-V-S-P-jan_2x8_POI_XXXX, where:
 	"2x8" indicates that the constellation is composed by 8 orbits containing 2 satellites each
 	"XXX" denotes the number of points of interests (POI) as an integer for concentrated instances ("None" is indicated for spread instances)
 
-Each of these benchmarks contains several instances of different sizes, referred to as:
-* 	small (around 50 requests)
-* 	medium (around 250 requests)
-* 	big (around 500 requests)
-* 	large (around 1000 requests)
-
 
 The requests types follow the definition as introduced in the following paper: Squillaci, S., Roussel, S., Pralet, C.: Parallel scheduling of complex requests for
 a constellation of Earth observing satellites. In: Passerini, A., Schiex, T. (eds.)
 Frontiers in Artificial Intelligence and Applications. IOS Press (2022). (available in https://ebooks.iospress.nl/pdf/doi/10.3233/FAIA220068)
 
 4 types of requests can be found, referred to as ONE-SHOT, STEROSCOPIC, VIDEO and PERIODIC.
-A study of algorithms solving these problems is available in XXXX.
+A study of algorithms solving these problems is available in :
+	Scheduling Complex Observation Requests for a Constellation of Satellites: Large Neighborhood Search Approaches.
 
 Each input file works as follows:
 
@@ -42,9 +45,12 @@ for each download opportunity:
 
 
 The scores are based on weather data. They differs from whose present in the CPAIOR paper because in the latter we compute classes of these scores as described in the paper.
+You can compute the same scoring system if needed by following the classes construction in the paper.
 
 The bounds of visiblity windows are expressed as integer representing the number of seconds spent since 0am.
-The duration are expressed as integer, measures in seconds.
+The duration are expressed as integer, measured in seconds.
 
 The domain of observations ID's and downloads ID's are disjoint.
 The latitude and longitude of download opportunities represent the latitude and longitude of the ground station.
+
+Only instances presented in the CPAIOR paper appear in this repository. For more instances (more seeds for specific types configuration or more POI) please contact us.
